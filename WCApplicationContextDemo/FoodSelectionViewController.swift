@@ -39,7 +39,8 @@ class FoodSelectionViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let foodItem = food[indexPath.row]
         do {
-            try WatchSessionManager.sharedManager.updateApplicationContext(["food" : foodItem])
+            try WatchSessionManager.sharedManager.updateApplicationContext(["food" : "same payload"])
+//            try WatchSessionManager.sharedManager.updateApplicationContext(["food" : foodItem])
         } catch {
             let alertController = UIAlertController(title: "Oops!", message: "Looks like your \(foodItem) got stuck on the way! Please send again!", preferredStyle: .Alert)
             presentViewController(alertController, animated: true, completion: nil)
